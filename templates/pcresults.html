@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <title>PC Results</title>
+<!--        <link rel="stylesheet" href="./style.css">-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+        <style>
+
+        table, td, th {
+            border: 1px solid #aaa;
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+        height: 30px;
+        }
+
+        td {
+            text-align: center;
+            padding: 5px;
+        }
+        </style>
+
+    </head>
+    <body>
+      <div>
+        <h1 style="text-align: center">PC search results</h1>
+          <table>
+        <tr>
+            <th>Maker</th>
+            <th>Model_Number</th>
+            <th>Speed</th>
+        </tr>
+        {% for result in results %}
+            <tr>
+                <td>{{ result[1] }}</td>
+                <td>{{ result[2] }}</td>
+                <td>{{ result[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+      </div>
+        <br>
+      <button class="btn" type="submit" value=" Go Back!"> <a style="text-decoration:none" href="/pcsearch"> Go Back! </a></button>
+    </body>
+</html>
